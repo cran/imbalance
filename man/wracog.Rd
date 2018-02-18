@@ -18,7 +18,8 @@ consecutive classifiers. Must have the same structure of \code{train}.}
 \item{wrapper}{An \code{S3} object. There must exist a method
 \code{\link{trainWrapper}} implemented for the class of the object, and a
 \code{\link[stats]{predict}} method implemented for the class of the model
-returned by \code{trainWrapper}.}
+returned by \code{trainWrapper}. Alternatively, it can the name of one of
+the wrappers distributed with the package, \code{"KNN"} or \code{"C5.0"}.}
 
 \item{slideWin}{Number of last sensitivities to take into account to meet the
 stopping criteria. By default, 10.}
@@ -50,14 +51,26 @@ former train, to the train dataset. Initial model is built on initial
 }
 \examples{
 data(haberman)
-myWrapper <- structure(list(), class="C50Wrapper")
-trainWrapper.C50Wrapper <- function(wrapper, train, trainClass){
+
+# Create train and validation partitions of haberman
+trainFold <- sample(1:nrow(haberman), nrow(haberman)/2, FALSE)
+trainSet <- haberman[trainFold, ]
+validationSet <- haberman[-trainFold, ]
+
+# Defines our own wrapper with a C5.0 tree
+myWrapper <- structure(list(), class="TestWrapper")
+trainWrapper.TestWrapper <- function(wrapper, train, trainClass){
   C50::C5.0(train, trainClass)
 }
 
-trainFold <- sample(1:nrow(haberman), nrow(haberman)/2, FALSE)
-newSamples <- wracog(haberman[trainFold, ], haberman[-trainFold, ],
-                     myWrapper, classAttr = "Class")
+# Execute wRACOG with our own wrapper
+newSamples <- wracog(trainSet, validationSet, myWrapper,
+                     classAttr = "Class")
+
+
+# Execute wRACOG with predifined wrappers for "KNN" or "C5.0"
+KNNSamples <- wracog(trainSet, validationSet, "KNN")
+C50Samples <- wracog(trainSet, validationSet, "C5.0")
 
 }
 \references{
