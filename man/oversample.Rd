@@ -5,10 +5,16 @@
 \title{Wrapper that encapsulates a collection of algorithms to perform a class
 balancing preprocessing task for binary class datasets}
 \usage{
-oversample(dataset, ratio = NA, method = c("RACOG", "wRACOG", "PDFOS",
-  "RWO", "ADASYN", "ANSMOTE", "SMOTE", "MWMOTE", "BLSMOTE", "DBSMOTE", "SLMOTE",
-  "RSLSMOTE"), filtering = FALSE, classAttr = "Class", wrapper = c("KNN",
-  "C5.0"), ...)
+oversample(
+  dataset,
+  ratio = NA,
+  method = c("RACOG", "wRACOG", "PDFOS", "RWO", "ADASYN", "ANSMOTE", "SMOTE", "MWMOTE",
+    "BLSMOTE", "DBSMOTE", "SLMOTE", "RSLSMOTE"),
+  filtering = FALSE,
+  classAttr = "Class",
+  wrapper = c("KNN", "C5.0"),
+  ...
+)
 }
 \arguments{
 \item{dataset}{A binary class \code{data.frame} to balance.}
@@ -19,7 +25,7 @@ minority class}/{size of majority class}. There are methods, such as
 \code{ADASYN} or \code{wRACOG} to which this parameter does not apply.}
 
 \item{method}{A \code{character} corresponding to method to apply. Possible
-methods are: RACOG, wRACOG, PDFOS, RWO, ADASYN, ANSMOTE, BLSMOTE, DBSMOTE,
+methods are: RACOG, wRACOG, PDFOS, RWO, ADASYN, ANSMOTE, SMOTE, MWMOTE,
 BLSMOTE, DBSMOTE, SLMOTE, RSLSMOTE}
 
 \item{filtering}{Logical (TRUE or FALSE) indicating wheter to apply filtering

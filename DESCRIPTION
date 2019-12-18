@@ -1,7 +1,7 @@
 Package: imbalance
 Type: Package
 Title: Preprocessing Algorithms for Imbalanced Datasets
-Version: 1.0.0
+Version: 1.0.2
 Authors@R: c(
    person("Ignacio", "Cordón", email = "nacho.cordon.castillo@gmail.com", role = c("aut", "cre")),
    person("Salvador", "García", role = "aut"),
@@ -26,14 +26,14 @@ Depends: R (>= 3.3.0)
 Imports: bnlearn, KernelKnn, ggplot2, utils, stats, mvtnorm, Rcpp,
         smotefamily, FNN, C50
 Suggests: testthat, knitr, rmarkdown
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
-Packaged: 2018-02-18 16:09:09 UTC; nuwanda
+Packaged: 2019-12-18 00:53:34 UTC; nuwanda
 Author: Ignacio Cordón [aut, cre],
   Salvador García [aut],
   Alberto Fernández [aut],
   Francisco Herrera [aut]
 Repository: CRAN
-Date/Publication: 2018-02-18 17:06:30 UTC
+Date/Publication: 2019-12-18 05:40:02 UTC
