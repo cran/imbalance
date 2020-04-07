@@ -1,7 +1,7 @@
 Package: imbalance
 Type: Package
 Title: Preprocessing Algorithms for Imbalanced Datasets
-Version: 1.0.2
+Version: 1.0.2.1
 Authors@R: c(
    person("Ignacio", "Cordón", email = "nacho.cordon.castillo@gmail.com", role = c("aut", "cre")),
    person("Salvador", "García", role = "aut"),
@@ -30,10 +30,10 @@ RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
-Packaged: 2019-12-18 00:53:34 UTC; nuwanda
+Packaged: 2020-03-30 12:10:40 UTC; hornik
 Author: Ignacio Cordón [aut, cre],
   Salvador García [aut],
   Alberto Fernández [aut],
   Francisco Herrera [aut]
 Repository: CRAN
-Date/Publication: 2019-12-18 05:40:02 UTC
+Date/Publication: 2020-04-07 06:51:44 UTC
